@@ -1,4 +1,6 @@
 import java.io.Console;
+import java.io.InputStream;
+import java.util.Scanner;
 
 /**
  * Assignment 1 - Guessing Game
@@ -9,43 +11,27 @@ import java.io.Console;
  */
 public class Guesser{
 
-  private int low;
-  private int high;
+  public int low;
+  public int high;
 
-  /*
-   * Task 1. Write code here for a constructor
-   * which takes two int arguments and saves
-   * them in the instance variables low and high.
-   *
-   * If you don't remember the syntax for how to write
-   * constructors, revisit the chapter "Classes"
-   * and review the section about constructors.
-   *
-   */
-  
-  // Write the constructor below this line.
+
   Guesser(int low, int high){
     this.low = low;
     this.high = high;
   }
 
-
-  /*
-   * Task 2. Complete the start() method, so that
-   * in the method body, you call first the
-   * rules() method, next the doGuesses() method.
-   */
   public void start(){
-    // call the rules method here
-    // call the doGuesses() method here
+    rules();
+    doGuesses();
   }
 
+  
   private void rules(){
-    System.out.println("Think of a number between " +
-                       low + " and "  + high);
-    System.out.println("I'm going to ask a few questions in order " +
-                       "to guess the number.");
-    System.out.println("Please answer T for true, and F for false.\n");
+    System.out.println("Tänk på ett nummer mellan " +
+                       low + " & "  + high);
+    System.out.println("Jag kommer att ställa ett par frågor för att " +
+                       "gissa vilket nummer du tänker på.");
+    System.out.println("Var snäll att svara T för sant, & F för falskt.\n");
   }
 
   /*
@@ -59,15 +45,21 @@ public class Guesser{
    * the player.
    */
   private String getReply(){
-    String reply = null;
-    // Write code here which reads a String from the console.
-    // As long as it is not a valid reply (one of "T" and "F")
-    // write an error message, and read a new reply.
-    // When you have gotten a valid reply, return it.
-    return reply;
+    String reply = new Scanner(System.in).nextLine();
+
+    while (!reply.equals("T") && !reply.equals("F")) {
+    System.out.println("Var snäll och svara T eller F");    
+    reply = new Scanner(System.in).nextLine();
+
+    }
+     return reply;
   }
 
-  private void doGuesses(){
+  private String scanner(InputStream in) {
+	return null;
+}
+
+private void doGuesses(){
     int i=0; // number of guesses
     int middle=0;
     while(low<high){
@@ -75,7 +67,7 @@ public class Guesser{
       // current low and current high
       middle=low + (high-low)/2;
 
-      System.out.println("Is the number less than or equal to " +
+      System.out.println("Är numret mindre eller lika med " +
                          middle + "?");
       String reply = getReply();
       if("T".equals(reply)){
@@ -95,10 +87,10 @@ public class Guesser{
   }
 
   private void answer(int guess, int numberOfGuesses){
-    System.out.println("You were thinking about " +
+    System.out.println("Du tänkte på " +
                        guess +
-                       " (took me " + numberOfGuesses +
-                       " guesses)");
+                       " (Det tog mig " + numberOfGuesses +
+                       " gissningar)");
   }
 
 }

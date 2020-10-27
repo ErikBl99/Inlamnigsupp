@@ -2,16 +2,11 @@ import java.io.Console;
 import java.io.InputStream;
 import java.util.Scanner;
 
-/**
- * Assignment 1 - Guessing Game
- * 
- * Here's the unfinished source code
- * for the Guesser class. It is your
- * task to complete the missing parts.
- */
-public class Guesser{
 
-  public int low;
+public class Guesser{
+  
+  // defining the two variables
+  public int low; 
   public int high;
 
 
@@ -20,12 +15,13 @@ public class Guesser{
     this.high = high;
   }
 
+  //creates the rules and the guesses
   public void start(){
     rules();
     doGuesses();
   }
 
-  
+  //start the program
   private void rules(){
     System.out.println("Tänk på ett nummer mellan " +
                        low + " & "  + high);
@@ -34,16 +30,7 @@ public class Guesser{
     System.out.println("Var snäll att svara T för sant, & F för falskt.\n");
   }
 
-  /*
-   * Task 3. Complete the code for the getReply() method.
-   * In the current version below, it returns null each
-   * call, which is not what this method is supposed to do.
-   * 
-   * Instead, change the method so that it reads a reply
-   * from the player, and if it is "T" or "F", we have
-   * a valid reply. Return the String that you read from
-   * the player.
-   */
+  //defines what happens when you type the wrong input
   private String getReply(){
     String reply = new Scanner(System.in).nextLine();
 

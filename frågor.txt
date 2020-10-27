@@ -12,6 +12,6 @@ Extrafråga - Man kan använd git Log eller git Checkout.
 
 Med git log kan man stega sig tillbaka från den senaste commiten eller en i taget.
 
-Git Checkout använder man om vet vilken commit man vill ändra & gå direkt till den.
+Git Checkout använder man om man vet vilken commit man vill ändra & gå direkt till den.
 
 Varje commit har en speciell tag som man kan använda för att lättare hitta det man letar efter
